@@ -1,0 +1,12 @@
+﻿body {
+    background: pink;
+}
+h1 {
+    font-size:1px;
+}
+h2{
+    font-size:5px;
+}
+body > h1{
+    font-size:100px;
+}
