@@ -33,5 +33,6 @@ namespace WebApplication1.Models
         }
 
         public DbSet<Mine> Mines { get; set; }
+        public DbSet<City> Cities{ get; set; }
     }
 }

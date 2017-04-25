@@ -1,15 +1,15 @@
-﻿@model WebApplication1.Models.ApplicationUser
+﻿@model WebApplication1.Models.City
 @{
     ViewBag.Title = "Index";
 }
 @{ 
-    var city = Model.Cities.First();
-<h1>City @city.CityId</h1>
+    var user = Model.ApplicationUser;
+<h1>City @this.Model.CityId</h1>
 <table align="right">
-        @foreach (var cit in Model.Cities)
+        @foreach (var cit in user.Cities)
         {
             <tr>
-                <td style="font-size: 20px">@Html.ActionLink("City " + cit.CityId, "ShowCityMines", "Mines", new { cit.CityId }, null)</td>
+                <td style="font-size: 20px">@Html.ActionLink("City " + cit.CityId, "ShowCityMines", "Mines", new { CityId = cit.CityId }, null)</td>
             </tr>
         }
 </table>
@@ -18,7 +18,7 @@
         <td id="t01">
             <table class="mines">
                 <caption>Mines</caption>
-                    @foreach (var mine in city.Mines)
+                    @foreach (var mine in this.Model.Mines)
                     {
                         <tr class="@(mine.Type)">
                             <td>
@@ -35,7 +35,7 @@
         <td id="t01">
             <table>
                 <caption>Resources</caption>
-                    @foreach (var resource in city.Resources)
+                    @foreach (var resource in this.Model.Resources)
                     {
                         <tr>
                             <td class="res-img @(resource.Type)">

@@ -13,19 +13,20 @@ namespace WebApplication1.Controllers
     {
         // GET: Default
         ApplicationDbContext dbContext = new ApplicationDbContext();
-        public ActionResult ShowCityMines(int? id)
+        public ActionResult ShowCityMines(int? cityId)
          {
              var userId = this.User.Identity.GetUserId();
              var user = dbContext.Users.Find(userId);
              City city;
-             if (!id.HasValue)
+             if (!cityId.HasValue)
              {
                  city = user.Cities.First();
              }
              else
              {
-                 city = user.Cities.ElementAt(id.Value);
+                 city = dbContext.Cities.Find(cityId.Value);
              }
+            this.UpdteResources(city);
             return View("Index", city);
          }
 
@@ -35,7 +36,7 @@ namespace WebApplication1.Controllers
             var user = dbContext.Users.Find(userId);
             var city = user.Cities.First();
             this.UpdteResources(city);
-            return View(user);
+            return View(city);
         }
 
         public ActionResult Details(int mineId)
