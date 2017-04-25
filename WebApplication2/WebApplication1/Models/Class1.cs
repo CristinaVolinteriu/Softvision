@@ -24,6 +24,7 @@ namespace WebApplication1.Models
         public ResourceType Type { get; set; }
 
         public double Value { get; set; }
+        public double Level { get; set; }
     }
 
     public class Mine
@@ -35,7 +36,14 @@ namespace WebApplication1.Models
         public int Level { get; set; }
 
         public ResourceType Type { get; set; }
+
+        public double GetProductionPerHour(int? level = null)
+        {
+            return (level ?? this.Level) * 13;
+        }
     }
+
+
 
     public enum ResourceType
     {

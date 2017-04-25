@@ -33,6 +33,8 @@ namespace WebApplication1.Controllers
         {
             var userId = this.User.Identity.GetUserId();
             var user = dbContext.Users.Find(userId);
+            var city = user.Cities.First();
+            this.UpdteResources(city);
             return View(user);
         }
 
@@ -40,6 +42,24 @@ namespace WebApplication1.Controllers
         {
             var mine = dbContext.Mines.Find(mineId);
             return View(mine);
+        }
+        
+
+        private void UpdteResources(City city)
+        {
+            var start = DateTime.Now;
+            foreach (var res in city.Resources)
+            {
+                foreach (var mine in city.Mines)
+                {
+                    if (mine.Type == res.Type)
+                    {
+                        res.Level += mine.GetProductionPerHour() * (start - res.LastUpdate).TotalHours;
+                    }
+                }
+                res.LastUpdate = start;
+            }
+            dbContext.SaveChanges();
         }
     }
 }

@@ -16,16 +16,17 @@
 <table>
     <tr>
         <td id="t01">
-            <table>
+            <table class="mines">
                 <caption>Mines</caption>
                     @foreach (var mine in city.Mines)
                     {
-                        <tr>
+                        <tr class="@(mine.Type)">
                             <td>
                                 <img src="~/Content/img/icon-@(mine.Type).png" /></td>
                                 <td>@mine.Type</td>
                                 <td>Level: @mine.Level</td>
-                                <td>@Html.ActionLink("Details", "Details", new { mineId = mine.MineId })
+                                <td>@Html.ActionLink("Details", "Details", new { mineId = mine.MineId })</td>
+                                <td class=" hourProduction">@mine.GetProductionPerHour()</td>
                         </tr>
                     }
             </table>
@@ -37,12 +38,24 @@
                     @foreach (var resource in city.Resources)
                     {
                         <tr>
+                            <td class="res-img @(resource.Type)">
+                                <img src="~/Content/img/icon-@(resource.Type).png" />
+                            </td>
                             <td>@resource.Type </td>
-                            <td>Value: @resource.Value</td>
+                            <td class="res-value @(resource.Type)">@resource.Level.ToString("n4")</td>
+                            <td class="res-update @(resource.Type)">@*@resource.LastUpdate*@</td>
+                            
                         </tr>
                     }
             </table>
         </td>
     </tr>
 </table>
+    <div>
+        @section Scripts
+        {
+            <script src="~/Scripts/UpdateMines/Mine.js"></script>
+            <script src="~/Scripts/Date.min.js"></script>
+        }
+    </div>
 }

@@ -33,7 +33,7 @@ body {
     height:100vh;
 }
 
-.mines {
+/*.mines {
     margin-left:300px;
     margin-top:200px;
 }
@@ -41,7 +41,7 @@ body {
 .mines {
     font-size:x-large;
 }
-
+*/
 td {
     background-color: lightgreen;
 }
