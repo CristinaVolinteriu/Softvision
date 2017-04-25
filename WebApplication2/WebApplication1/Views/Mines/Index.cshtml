@@ -1,17 +1,48 @@
-﻿@model WebApplication1.Models.City
-
+﻿@model WebApplication1.Models.ApplicationUser
 @{
     ViewBag.Title = "Index";
 }
-<table>
-    @foreach(var mine in this.Model.Mines)
-    {
-        <tr>
-            <td>
-                <img src="~/Content/img/icon-@(mine.Type).png" /></td>
-            <td>@mine.Type</td>
-            <td>@mine.Level</td>
-            <td>@Html.ActionLink("Details","Details", new { mineId = mine.MineId})
-        </tr>
-    }
+@{ 
+    var city = Model.Cities.First();
+<h1>City @city.CityId</h1>
+<table align="right">
+        @foreach (var cit in Model.Cities)
+        {
+            <tr>
+                <td style="font-size: 20px">@Html.ActionLink("City " + cit.CityId, "ShowCityMines", "Mines", new { cit.CityId }, null)</td>
+            </tr>
+        }
 </table>
+<table>
+    <tr>
+        <td id="t01">
+            <table>
+                <caption>Mines</caption>
+                    @foreach (var mine in city.Mines)
+                    {
+                        <tr>
+                            <td>
+                                <img src="~/Content/img/icon-@(mine.Type).png" /></td>
+                                <td>@mine.Type</td>
+                                <td>Level: @mine.Level</td>
+                                <td>@Html.ActionLink("Details", "Details", new { mineId = mine.MineId })
+                        </tr>
+                    }
+            </table>
+        </td>
+
+        <td id="t01">
+            <table>
+                <caption>Resources</caption>
+                    @foreach (var resource in city.Resources)
+                    {
+                        <tr>
+                            <td>@resource.Type </td>
+                            <td>Value: @resource.Value</td>
+                        </tr>
+                    }
+            </table>
+        </td>
+    </tr>
+</table>
+}

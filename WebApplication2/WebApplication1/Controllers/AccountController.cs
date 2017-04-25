@@ -206,6 +206,57 @@ namespace WebApplication1.Controllers
                                    LastUpdate = DateTime.Now,
                                },
                            }
+                        },
+                         new City
+                         {
+                             Mines = new List<Mine>
+                           {
+                               new Mine
+                               {
+                                   Level = 1,
+                                   Type = ResourceType.Clay,
+                               },
+                               new Mine
+                               {
+                                   Level = 1,
+                                   Type = ResourceType.Iron,
+                               },
+                               new Mine
+                               {
+                                   Level = 1,
+                                   Type = ResourceType.Wheat,
+                               },
+                               new Mine
+                               {
+                                   Level = 1,
+                                   Type = ResourceType.Wood,
+                               },
+                           },
+
+                             Resources = new List<Resource>
+                           {
+                               new Resource
+                               {
+                                   Type = ResourceType.Clay,
+                                   LastUpdate = DateTime.Now,
+                               },
+                               new Resource
+                               {
+                                   Type = ResourceType.Iron,
+                                   LastUpdate = DateTime.Now,
+                               },
+                               new Resource
+                               {
+                                   Type = ResourceType.Wheat,
+                                   LastUpdate = DateTime.Now,
+                               },
+                               new Resource
+                               {
+                                   Type = ResourceType.Wood,
+                                   LastUpdate = DateTime.Now,
+                               },
+                           }
+
                         }
                     }
                 };

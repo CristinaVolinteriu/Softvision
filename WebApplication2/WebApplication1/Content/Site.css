@@ -46,6 +46,10 @@ td {
     background-color: lightgreen;
 }
 
+td#t01{
+    padding:15px;
+}
+
 .mine-detail{
     margin:10px;
     padding:50px;

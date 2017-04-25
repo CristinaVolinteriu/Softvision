@@ -13,12 +13,27 @@ namespace WebApplication1.Controllers
     {
         // GET: Default
         ApplicationDbContext dbContext = new ApplicationDbContext();
+        public ActionResult ShowCityMines(int? id)
+         {
+             var userId = this.User.Identity.GetUserId();
+             var user = dbContext.Users.Find(userId);
+             City city;
+             if (!id.HasValue)
+             {
+                 city = user.Cities.First();
+             }
+             else
+             {
+                 city = user.Cities.ElementAt(id.Value);
+             }
+            return View("Index", city);
+         }
+
         public ActionResult Index()
         {
             var userId = this.User.Identity.GetUserId();
             var user = dbContext.Users.Find(userId);
-            var city = user.Cities.First();
-            return View(city);
+            return View(user);
         }
 
         public ActionResult Details(int mineId)
