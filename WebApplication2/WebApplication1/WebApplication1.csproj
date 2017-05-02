@@ -216,6 +216,7 @@
     <Content Include="Content\Content\img\mine-iron.png" />
     <Content Include="Content\Content\img\mine-wheat.png" />
     <Content Include="Content\Content\img\mine-wood.png" />
+    <Content Include="Content\img\village-bg.jpg" />
     <Content Include="Content\Content\Site.css" />
     <Content Include="Content\img\background-clearing.jpg" />
     <Content Include="Content\img\icon-clay.png" />
@@ -230,6 +231,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="mines-html.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
