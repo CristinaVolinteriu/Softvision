@@ -66,3 +66,37 @@ C:\Users\svuser\Documents\Visual Studio 2017\Projects\WebApplication2\WebApplica
 C:\Users\svuser\Documents\Visual Studio 2017\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
 C:\Users\svuser\Documents\Visual Studio 2017\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\svuser\Documents\Visual Studio 2017\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\csc.exe
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\csc.exe.config
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\csc.rsp
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\csi.exe
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\csi.rsp
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\System.AppContext.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\System.Collections.Immutable.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\System.IO.FileSystem.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\System.Reflection.Metadata.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\vbc.exe
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\vbc.exe.config
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\vbc.rsp
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\VBCSCompiler.exe
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\roslyn\VBCSCompiler.exe.config
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\WebApplication2.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Softvision\Softvision\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
+D:\Softvision\Softvision\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+D:\Softvision\Softvision\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb

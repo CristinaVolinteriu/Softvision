@@ -2,60 +2,394 @@
 @{
     ViewBag.Title = "Index";
 }
-@{ 
+@{
     var user = Model.ApplicationUser;
-<h1>City @this.Model.CityId</h1>
-<table align="right">
+    <h1>City @this.Model.CityId</h1>
+    <table align="right">
         @foreach (var cit in user.Cities)
         {
             <tr>
                 <td style="font-size: 20px">@Html.ActionLink("City " + cit.CityId, "ShowCityMines", "Mines", new { CityId = cit.CityId }, null)</td>
             </tr>
         }
-</table>
-<table>
-    <tr>
-        <td id="t01">
-            <table class="mines">
+    </table>
+    @**<table>
+        <tr>
+            <td class="t01">
                 <caption>Mines</caption>
+                <table class="mines">
                     @foreach (var mine in this.Model.Mines)
                     {
                         <tr class="@(mine.Type)">
                             <td>
-                                <img src="~/Content/img/icon-@(mine.Type).png" /></td>
-                                <td>@mine.Type</td>
-                                <td>Level: @mine.Level</td>
-                                <td>@Html.ActionLink("Details", "Details", new { mineId = mine.MineId })</td>
-                                <td class=" hourProduction">@mine.GetProductionPerHour()</td>
-                        </tr>
-                    }
-            </table>
-        </td>
-
-        <td id="t01">
-            <table>
-                <caption>Resources</caption>
-                    @foreach (var resource in this.Model.Resources)
-                    {
-                        <tr>
-                            <td class="res-img @(resource.Type)">
-                                <img src="~/Content/img/icon-@(resource.Type).png" />
+                                <img src="~/Content/img/icon-@(mine.Type).png" />
                             </td>
-                            <td>@resource.Type </td>
-                            <td class="res-value @(resource.Type)">@resource.Level.ToString("n4")</td>
-                            <td class="res-update @(resource.Type)">@*@resource.LastUpdate*@</td>
-                            
+                            <td>@mine.Type</td>
+                            <td>Level: @mine.Level</td>
+                            <td>@Html.ActionLink("Details", "Details", new { mineId = mine.MineId })</td>
+                            <td class="hourProduction">@mine.GetProductionPerHour()</td>
                         </tr>
                     }
-            </table>
-        </td>
-    </tr>
-</table>
-    <div>
-        @section Scripts
+                </table>
+            </td>
+        </tr>
+    </table>*@
+    <table class="t01">
+        <caption>Resources</caption>
+        @foreach (var resource in this.Model.Resources)
         {
-            <script src="~/Scripts/UpdateMines/Mine.js"></script>
-            <script src="~/Scripts/Date.min.js"></script>
+            <tr>
+                <td class="res-img @(resource.Type)">
+                    <img src="~/Content/img/icon-@(resource.Type).png" />
+                </td>
+                <td>@resource.Type </td>
+                <td class="res-value @(resource.Type)">@resource.Level.ToString("n4")</td>
+                <td class="res-update @(resource.Type)">@*@resource.LastUpdate*@</td>
+
+            </tr>
         }
-    </div>
-}
+    </table>
+    <div class="main">
+        <img id="villageimg" src="~/Content/img/village-bg.jpg" />
+        <div class="mine-wrapper">
+            <div class="mine-level mine-wheat mine-wheat-1" style="font-size:16px;">
+                @{
+                    int level = 0, id = 0;
+                    WebApplication1.Models.Mine mina = null;
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-wheat-1")
+                        {
+                            level = mine.Level;
+                            id = mine.MineId;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-wheat mine-wheat-2" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-wheat-2")
+                        {
+                            level = mine.Level;
+                            id = mine.MineId;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-wheat mine-wheat-3" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-wheat-3")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-wheat mine-wheat-4" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-wheat-4")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-wheat mine-wheat-5" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-wheat-5")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-wheat mine-wheat-6" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-wheat-6")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-wood mine-wood-1" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-wood-1")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-wood mine-wood-2" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-wood-2")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-wood mine-wood-3" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-wood-3")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-iron mine-iron-1" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-iron-1")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-iron mine-iron-2" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-iron-2")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-clay mine-clay-1" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-clay-1")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-clay mine-clay-2" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-clay-2")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                <div class="hidden-info">
+                    <div class="@(mina.Type)">
+                        <div>
+                            <img src="~/Content/img/icon-@(mina.Type).png" />
+                        </div>
+                        <div>@mina.Type</div>
+                        <div>Level: @mina.Level</div>
+                        <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="mine-level mine-clay mine-clay-3" style="font-size:16px;">
+                @{
+                    foreach (var mine in Model.Mines)
+                    {
+                        if (mine.MineStyle == "mine-clay-3")
+                        {
+                            level = mine.Level;
+                            mina = mine;
+                        }
+                    }
+                    <div>@Html.ActionLink(level.ToString(), "Details", new { mineId = mina.MineId })</div>
+                    <div class="hidden-info">
+                        <div class="@(mina.Type)">
+                            <div>
+                                <img src="~/Content/img/icon-@(mina.Type).png" />
+                            </div>
+                            <div>@mina.Type</div>
+                            <div>Level: @mina.Level</div>
+                            <div class="hourProduction">@mina.GetProductionPerHour()</div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+        </div>
+        <div id="mine-details-container">
+            <div class="close-btn">X</div>
+            <div class="content"></div>
+        </div>
+        <div>
+            @section Scripts
+        {
+                <script src="~/Scripts/UpdateMines/Mine.js"></script>
+                <script src="~/Scripts/Date.min.js"></script>
+            }
+        </div>
+        }

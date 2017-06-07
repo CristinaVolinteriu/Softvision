@@ -14,6 +14,16 @@ namespace WebApplication1.Models
         public bool BrowserRemembered { get; set; }
     }
 
+    public class CityFilterViewModel
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public int? MinTroupCount { get; set; }
+        public int? MaxTroupCount { get; set; }
+
+        public List<City> Results { get; set; }
+    }
+
     public class ManageLoginsViewModel
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }
