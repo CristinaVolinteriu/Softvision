@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.Mine
+﻿@model DataAccess.Mine
 
 @{
     ViewBag.Title = "Details";
@@ -6,20 +6,20 @@
 
 <h2>Details</h2>
 
-<div class="mine-detail">
+<div>
     <p>@Model.Type</p>
     @switch (Model.Type)
     {
-        case WebApplication1.Models.ResourceType.Wheat:
+        case DataAccess.ResourceType.Wheat:
             <p>Your population`s food is produced here. By increasing the farm`s level, you increase its crop production.</p>
             break;
-        case WebApplication1.Models.ResourceType.Clay:
+        case DataAccess.ResourceType.Clay:
             <p>Clay is produced here. By increasing its level, you increase the clay production.</p>
             break;
-        case WebApplication1.Models.ResourceType.Wood:
+        case DataAccess.ResourceType.Wood:
             <p>The woodcutter cuts down trees in order to produce lumber. The further you extend the woodcutter, the more lumber is produced</p>
             break;
-        case WebApplication1.Models.ResourceType.Iron:
+        case DataAccess.ResourceType.Iron:
             <p>Here miners produce the precious resource of iron. By increasing the mine`s level, you increase the iron production.</p>
             break;
     }

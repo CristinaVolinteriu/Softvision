@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.City
+﻿@model DataAccess.City
 @{
     ViewBag.Title = "Index";
 }
@@ -55,7 +55,7 @@
             <div class="mine-level mine-wheat mine-wheat-1" style="font-size:16px;">
                 @{
                     int level = 0, id = 0;
-                    WebApplication1.Models.Mine mina = null;
+                    DataAccess.Mine mina = null;
                     foreach (var mine in Model.Mines)
                     {
                         if (mine.MineStyle == "mine-wheat-1")
